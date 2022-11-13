@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Doctor\DoctorController;
+use App\Http\Controllers\ApplicationFormController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,3 +71,12 @@ Route::prefix('doctor')->name('doctor.')->group(function(){
        });
 
 });
+
+//admin applican test
+Route::get('/Application/test', [AdminController::class, 'test'])->name('application.test');
+Route::get('/active/{id}', [AdminController::class, 'Active'])->name('Active');
+Route::get('/deactive/{id}', [AdminController::class, 'Deactive'])->name('Deactive');
+Route::get('/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
+// baby Application form
+Route::get('/Application/form', [ApplicationFormController::class, 'Application'])->name('application');
+Route::post('/application/form/store', [ApplicationFormController::class, 'Application_store'])->name('application.store');

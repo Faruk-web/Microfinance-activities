@@ -1,8 +1,8 @@
 <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
       <div class="container-fluid position-relative">
         <a class="navbar-brand" href="/">
-          <img class="navbar-brand-regular" src="logo.png" alt="brand-logo" width="50" height="50">
-          <img class="navbar-brand-sticky" src="logo.png" alt="sticky brand-logo" width="50" height="50">
+          <img class="navbar-brand-regular" src="{{asset('fontand/assets')}}/logo.png" alt="brand-logo" width="50" height="50">
+          <img class="navbar-brand-sticky" src="{{asset('fontand/assets')}}/logo.png" alt="sticky brand-logo" width="50" height="50">
           <p class="navbar-text"> মহিলা বিষয়ক অধিদপ্তর <span class="site-description" style="font-size: 16px; font-weight: 400; display: flex;">মহিলাদের আত্ম-কর্মসংস্থাপনের জন্য ক্ষুদ্রঋণ কার্যক্রম</span>
           </p>
         </a>

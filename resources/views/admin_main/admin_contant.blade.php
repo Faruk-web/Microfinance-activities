@@ -1,7 +1,4 @@
-
- @extends('admin_main.admin_master')
-  @section('admin_contant')
-  <main class="container-fluid">
+<main class="container-fluid">
         <!-- breadcrumb -->
         <div class="breadcrumb-header justify-content-between">
           <div class="left-content">
@@ -252,4 +249,3 @@
     <!-- /row -->
     </div>
     </main>
-@endsection
