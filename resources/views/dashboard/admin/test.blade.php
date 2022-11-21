@@ -55,12 +55,12 @@
                           <!-- <td>
                             <select class="form-control" id="changeStatus" wire:model="status" wire:change.lazy="changeStatus(1886)">
                             <option value="" selected>Choice...</option>
-                              @if($data->status == 1)
-                              <option value="Approved"><a  href="{{ route('Deactive',$data->id) }}"
-                                class="btn btn-success" title="Product Active Now">Approved </a></option>
-                                @elseif($data->status == 1)
-                                <option value="Rejected"><a href="{{ route('Active',$data->id) }}"
-                                class="btn btn-danger" title="Product Active Now">Rejected </a></option>
+                              @if($data->status == 'Approved')
+                              <a  href="{{ route('Deactive',$data->id) }}"
+                                class="btn btn-success" title="Product Active Now"> <option value="Approved">Approved </option></a>
+                                @else
+                                <a href="{{ route('Active',$data->id) }}"
+                                class="btn btn-danger" title="Product Active Now"> <option value="Rejected">Proccessing </option></a>
                                 @endif 
                               <option value="Certified">Certified</option>
                               <option value="Cancelled">Cancelled</option>

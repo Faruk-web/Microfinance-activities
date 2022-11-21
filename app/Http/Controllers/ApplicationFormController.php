@@ -49,6 +49,31 @@ class ApplicationFormController extends Controller
         $application->confirm = $request->input('confirm');
         $application->email = $request->input('email');
 
+ 
+   
+            $image = $request->file('file');
+            $input['file'] = time().'.'.$image->getClientOriginalExtension();
+            
+            $destinationPath = public_path('/thumbnail');
+            $imgFile = Image::make($image->getRealPath());
+            $imgFile->resize(150, 150, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destinationPath.'/'.$input['file']);
+            $destinationPath = public_path('/uploads');
+            $image->move($destinationPath, $input['file']);
+            return back()
+                ->with('success','Image has successfully uploaded.')
+                ->with('fileName',$input['file']);
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if($request->hasfile('photo'))
         {
             $file = $request->file('photo');
