@@ -29,6 +29,10 @@ class CreateApplicationFormsTable extends Migration
             $table->string('day')->nullable();
             $table->string('month')->nullable();
             $table->string('year')->nullable();
+            $table->string('applicant_number')->nullable();
+            $table->string('status')->nullable();
+            $table->string('status_st')->nullable();
+            
             $table->string('religion')->nullable();
             $table->string('education_qualification')->nullable();
             $table->string('mobile')->nullable();

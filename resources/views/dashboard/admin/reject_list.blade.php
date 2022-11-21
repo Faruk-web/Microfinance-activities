@@ -42,47 +42,11 @@
                           <td>{{$data->year}}</td>
 
                           <td>
-                          @if($data->status_st  == '1')
-                            <a  href="{{ route('Deactivef',$data->id) }}"
-                                class="btn btn-sm btn-dark-gradient btn-block" title="Product Active Now">Rejected </a>
-                            @else
-                            <a href="{{ route('Activef',$data->id) }}"
-                                class="btn btn-sm btn-danger btn-block" title="Product Active Now">You Rejected </a>
-                          
-                            @endif 
-                            @if($data->status == 'Approved')
-                            <a  href="{{ route('Deactive',$data->id) }}"
-                                class="btn btn-sm btn-success-gradient btn-block" title="Product Active Now">Approved </a>
-                            @else
-                            <a href="{{ route('Active',$data->id) }}"
-                                class="btn btn-sm btn-dark-gradient btn-block" title="Product Active Now">Proccessing </a>
-                          
-                            @endif 
-                           
+                            <p  href=""
+                                class="btn btn-sm btn-danger btn-block" title="Product Active Now">You are Rejected</p>
                             </td>
-                          <!-- <td>
-                            <select class="form-control" id="changeStatus" wire:model="status" wire:change.lazy="changeStatus(1886)">
-                            <option value="" selected>Choice...</option>
-                              @if($data->status == 'Approved')
-                              <a  href="{{ route('Deactive',$data->id) }}"
-                                class="btn btn-success" title="Product Active Now"> <option value="Approved">Approved </option></a>
-                                @else
-                                <a href="{{ route('Active',$data->id) }}"
-                                class="btn btn-danger" title="Product Active Now"> <option value="Rejected">Proccessing </option></a>
-                                @endif 
-                              <option value="Certified">Certified</option>
-                              <option value="Cancelled">Cancelled</option>
-                              
-                            </select> Registered
-                          </td> -->
                           <td>
-                            <!-- <button data-toggle="modal" data-target="#updateModal" class="btn btn-sm btn-block btn-info-gradient" wire:click="edit(1886)">
-                              <i class="las la-pen"></i>
-                            </button> -->
-                            <a class="btn btn-danger" href="{{route('admin.delete',$data->id)}}">Delete</a>
-                            <!-- <button wire:click="delete(1886)" class="btn btn-block btn-sm btn-danger-gradient">
-                              <i class="las la-trash"></i>
-                            </button> -->
+                            <a class="btn btn-danger" href="{{route('admin.delete',$data->id)}}">Delete</a>         
                           </td>
                           <td class="std-download-btn">
                             <a target="_blank" href="studentpdf/1886" class="btn btn-sm btn-dark-gradient btn-block">PDF</a>

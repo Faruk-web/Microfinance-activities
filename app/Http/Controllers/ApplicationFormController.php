@@ -20,6 +20,7 @@ class ApplicationFormController extends Controller
         $applicant_number = "S".rand(1000, 9999).$update_count;
         $application->applicant_number = $applicant_number;
         $application->status ='Proccessing';
+        $application->status_st  = '0';
         $application->centerName = $request->input('centerName');
         $application->subcenterName = $request->input('subcenterName');
         $application->district = $request->input('district');
@@ -42,38 +43,13 @@ class ApplicationFormController extends Controller
         $application->guardianmobile = $request->input('guardianmobile');
         $application->marital_status = $request->input('marital_status');
         $application->occupation = $request->input('occupation');
+        
         $application->amount = $request->input('amount');
         $application->costamount = $request->input('costamount');
         $application->sector = $request->input('sector');
         $application->amount_cost = $request->input('amount_cost');
         $application->confirm = $request->input('confirm');
-        $application->email = $request->input('email');
-
- 
-   
-            $image = $request->file('file');
-            $input['file'] = time().'.'.$image->getClientOriginalExtension();
-            
-            $destinationPath = public_path('/thumbnail');
-            $imgFile = Image::make($image->getRealPath());
-            $imgFile->resize(150, 150, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($destinationPath.'/'.$input['file']);
-            $destinationPath = public_path('/uploads');
-            $image->move($destinationPath, $input['file']);
-            return back()
-                ->with('success','Image has successfully uploaded.')
-                ->with('fileName',$input['file']);
-     
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        $application->email = $request->input('email');     
         if($request->hasfile('photo'))
         {
             $file = $request->file('photo');

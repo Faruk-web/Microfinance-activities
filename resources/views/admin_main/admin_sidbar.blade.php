@@ -63,9 +63,15 @@
             </a>
           </li>
           <li class="slide">
-            <a class="side-menu__item" href="#">
+            <a class="side-menu__item" href="{{route('application.approved')}}">
               <img class="side-menu__icon" src="https://img.icons8.com/external-wanicon-flat-wanicon/64/000000/external-students-online-education-wanicon-flat-wanicon.png" />
-              <span class="side-menu__label">আবেদন ডাউনলোড</span>
+              <span class="side-menu__label">Approved Application</span>
+            </a>
+          </li>
+          <li class="slide">
+            <a class="side-menu__item" href="{{route('application.rejected')}}">
+              <img class="side-menu__icon" src="https://img.icons8.com/external-wanicon-flat-wanicon/64/000000/external-students-online-education-wanicon-flat-wanicon.png" />
+              <span class="side-menu__label">Rejected Application</span>
             </a>
           </li>
           <li class="slide">

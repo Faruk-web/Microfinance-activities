@@ -74,8 +74,12 @@ Route::prefix('doctor')->name('doctor.')->group(function(){
 
 //admin applican test
 Route::get('/Application/test', [AdminController::class, 'test'])->name('application.test');
+Route::get('/Application/approved', [AdminController::class, 'approved'])->name('application.approved');
+Route::get('/Application/rejected', [AdminController::class, 'rejected'])->name('application.rejected');
 Route::get('/active/{id}', [AdminController::class, 'Active'])->name('Active');
 Route::get('/deactive/{id}', [AdminController::class, 'Deactive'])->name('Deactive');
+Route::get('/active_r/{id}', [AdminController::class, 'Activef'])->name('Activef');
+Route::get('/deactive_r/{id}', [AdminController::class, 'Deactivef'])->name('Deactivef');
 Route::get('/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
 // baby Application form
 Route::get('/Application/form', [ApplicationFormController::class, 'Application'])->name('application');

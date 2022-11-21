@@ -37,6 +37,26 @@ class AdminController extends Controller
         $application_data=ApplicationForm::get();
         return view('dashboard.admin.test',compact('application_data'));
     }
+     //applican test
+     public function approved(){
+        $application_data=ApplicationForm::where('status','Approved')->get();
+        return view('dashboard.admin.approved_list',compact('application_data'));
+    }
+     //applican test
+     public function rejected(){
+        $application_data=ApplicationForm::where('status_st','0')->get();
+        return view('dashboard.admin.reject_list',compact('application_data'));
+    }
+      // ---------------Active-----------------
+      public function Activef($id){
+        ApplicationForm::findOrFail($id)->update(['status_st' => '1',]);
+       return redirect()->back();
+        }
+    // -----------------deactive----------------------
+    public function Deactivef($id){
+        ApplicationForm::findOrFail($id)->update(['status_st' => '0',]); 
+        return redirect()->back();
+    }
         // ---------------Active-----------------
         public function Active($id){
             ApplicationForm::findOrFail($id)->update(['status' => 'Approved',]);
@@ -47,6 +67,7 @@ class AdminController extends Controller
             ApplicationForm::findOrFail($id)->update(['status' => 'Proccessing',]); 
             return redirect()->back();
         }
+      
            //delete
     public function delete($id){
         ApplicationForm::find($id)->delete();
